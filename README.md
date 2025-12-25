@@ -1,7 +1,9 @@
 HenCount — Poultry CCTV Bird Counting & Weight Estimation
 
 Author: Shashank
+
 Project Name: HenCount
+
 Role Targeted: Machine Learning / Computer Vision Engineer
 
 1. Project Overview
@@ -47,10 +49,13 @@ Because GitHub does not allow large ML files, the model, videos, and outputs are
 Download these from Google Drive and place them in the project as shown:
 
 Content	Drive Link
-YOLO poultry model (best.pt)	ADD_MODEL_DRIVE_LINK
-Input CCTV video (sample.mp4)	ADD_VIDEO_DRIVE_LINK
-Output video + JSON	ADD_OUTPUTS_DRIVE_LINK
+```
+YOLO poultry model (best.pt)	https://drive.google.com/drive/folders/1qLACmAt0lIt9hX3gF5CT_LSPLUZTsABJ?usp=sharing
 
+Input CCTV video (sample.mp4)	https://drive.google.com/drive/folders/1zpj63HZl0yg82n_NY7qCE77bm4x3fdDQ?usp=sharing
+
+Output video + JSON	https://drive.google.com/drive/folders/101k3KqgSr37qyAwg8IERm0Fw3teCUXI8?usp=sharing
+```
 Place them inside:
 
 HenCount/models/
@@ -58,6 +63,7 @@ HenCount/data/videos/
 HenCount/outputs/
 
 4. Folder Structure
+```
 HenCount/
 ├── app/
 ├── models/            ← YOLO model (from Drive)
@@ -73,8 +79,8 @@ HenCount/
 ├── lite_pipeline.py   ← Main inference pipeline
 ├── requirements.txt
 └── README.md
-
-5. How Detection Works
+```
+6. How Detection Works
 
 This system uses a poultry-trained YOLOv8 model (best.pt).
 
@@ -151,22 +157,24 @@ Keeps temporal trends accurate
 
 10. How to Run HenCount
 Step 1 — Install dependencies
+```
 pip install -r requirements.txt
-
+```
 Step 2 — Run the pipeline
+```
 python lite_pipeline.py
-
+```
 
 This will generate:
-
+```
 outputs/videos/hen_output.mp4
 outputs/json/hen_counts.json
-
+```
 11. Output Files
 🎥 Annotated Video
-
+```
 outputs/videos/hen_output.mp4
-
+```
 Contains:
 
 Green boxes on birds
@@ -176,11 +184,11 @@ Count overlay
 Weight index overlay
 
 📄 JSON Output
-
+```
 outputs/json/hen_counts.json
-
+```
 Example:
-
+```
 [
   {
     "time_sec": 0.2,
@@ -193,7 +201,7 @@ Example:
     "avg_weight_index": 0.0611
   }
 ]
-
+```
 12. What the Evaluator Should Check
 
 To verify this project:
